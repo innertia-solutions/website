@@ -196,7 +196,7 @@ const products = [
           </h1>
           <div class="mt-5 max-w-2xl">
             <p class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
-              Arquitectura, DevOps, consultoría y desarrollo de software. Un equipo pequeño y enfocado que entrega sin intermediarios ni burocracia.
+              Arquitectura cloud, DevOps, integraciones B2B y desarrollo de software a medida. Tecnología que escala con tu negocio.
             </p>
           </div>
           <div class="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
