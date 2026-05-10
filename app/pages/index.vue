@@ -225,24 +225,18 @@ const products = [
           </div>
           <div class="flex flex-wrap items-center justify-between gap-6 pb-10 border-b border-slate-100 dark:border-white/10">
             <template v-for="c in clients" :key="c.name">
-              <component
-                :is="c.url ? 'a' : 'div'"
-                v-bind="c.url ? { href: c.url, target: '_blank', rel: 'noopener noreferrer' } : {}"
-                class="group flex h-12 w-36 items-center justify-center grayscale transition duration-200 hover:grayscale-0"
-              >
+              <div class="flex h-12 w-36 items-center justify-center grayscale">
                 <img
                   v-if="c.logo"
                   :src="c.logo"
                   :alt="c.name"
                   :class="[
-                    'max-h-12 max-w-[144px] object-contain transition duration-200',
-                    c.light
-                      ? 'invert dark:invert-0'
-                      : 'dark:invert dark:group-hover:invert-0',
+                    'max-h-12 max-w-[144px] object-contain',
+                    c.light ? 'invert dark:invert-0' : 'dark:invert',
                   ]"
                 >
                 <span v-else class="text-3xl font-bold text-slate-700 dark:text-slate-300 tracking-tight">{{ c.name }}</span>
-              </component>
+              </div>
             </template>
           </div>
         </div>
