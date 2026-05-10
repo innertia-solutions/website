@@ -1,0 +1,73 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Galaxy drift animations ── */
+@keyframes galaxy-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 280px -160px; }
+}
+
+@keyframes galaxy-drift-reverse {
+  0%   { background-position: 0 0; }
+  100% { background-position: -180px 220px; }
+}
+
+@keyframes galaxy-pulse {
+  0%, 100% { opacity: var(--dot-opacity, 0.4); }
+  50%      { opacity: calc(var(--dot-opacity, 0.4) * 1.4); }
+}
+
+/* ── Foreground dots (bigger, drift right-down) ── */
+.dot-grid {
+  --dot-opacity: 0.85;
+  background-image: radial-gradient(circle, #94a3b8 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 110% 80% at 30% 50%, black 25%, transparent 100%);
+  mask-image: radial-gradient(ellipse 110% 80% at 30% 50%, black 25%, transparent 100%);
+  opacity: var(--dot-opacity);
+  animation: galaxy-drift 60s linear infinite, galaxy-pulse 8s ease-in-out infinite;
+}
+
+.dark .dot-grid {
+  --dot-opacity: 0.7;
+  background-image: radial-gradient(circle, #1e3a6e 1px, transparent 1px);
+}
+
+/* ── Background dots (smaller, drift opposite for parallax depth) ── */
+.dot-grid-far {
+  --dot-opacity: 0.55;
+  background-image: radial-gradient(circle, #cbd5e1 0.5px, transparent 0.5px);
+  background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(ellipse 120% 90% at 40% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 120% 90% at 40% 50%, black 30%, transparent 100%);
+  opacity: var(--dot-opacity);
+  animation: galaxy-drift-reverse 90s linear infinite, galaxy-pulse 12s ease-in-out infinite;
+}
+
+.dark .dot-grid-far {
+  --dot-opacity: 0.5;
+  background-image: radial-gradient(circle, #3b5a92 0.5px, transparent 0.5px);
+}
+
+/* ── Glow that follows mouse — drifts with the foreground dots so the same ones light up ── */
+.dot-grid-glow {
+  background-image: radial-gradient(circle, #38bdf8 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(180px circle at var(--glow-x, -999px) var(--glow-y, -999px), black, transparent);
+  mask-image: radial-gradient(180px circle at var(--glow-x, -999px) var(--glow-y, -999px), black, transparent);
+  opacity: 0.9;
+  animation: galaxy-drift 60s linear infinite;
+}
+
+.dark .dot-grid-glow {
+  background-image: radial-gradient(circle, #7dd3fc 1.5px, transparent 1.5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot-grid, .dot-grid-far { animation: none; }
+}
