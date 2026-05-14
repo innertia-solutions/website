@@ -145,8 +145,8 @@ const products = [
     <header class="sticky top-4 z-50 px-4">
       <nav class="max-w-5xl mx-auto flex items-center justify-between py-2 ps-5 pe-2 rounded-[26px] bg-white/90 dark:bg-[#0c1628]/95 border border-slate-200/70 dark:border-white/10 backdrop-blur-md shadow-sm">
         <a href="/" class="flex-none block">
-          <img v-if="isDark" src="/isologo-light.png" alt="innertia" class="block h-7 w-auto">
-          <img v-else src="/isologo-dark.png" alt="innertia" class="block h-7 w-auto">
+          <img v-if="isDark" src="/isologo-dark.png" alt="innertia" class="block h-7 w-auto">
+          <img v-else src="/isologo-light.png" alt="innertia" class="block h-7 w-auto">
         </a>
 
         <div class="hidden md:flex items-center">
@@ -421,8 +421,8 @@ const products = [
     <footer class="border-t border-slate-100 dark:border-white/10 py-8">
       <div class="max-w-5xl px-4 xl:px-0 mx-auto">
         <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <img v-if="isDark" src="/isologo-light.png" alt="innertia" class="block h-7 w-auto">
-          <img v-else src="/isologo-dark.png" alt="innertia" class="block h-7 w-auto">
+          <img v-if="isDark" src="/isologo-dark.png" alt="innertia" class="block h-7 w-auto">
+          <img v-else src="/isologo-light.png" alt="innertia" class="block h-7 w-auto">
           <p class="text-sm text-slate-400 dark:text-slate-500">{{ new Date().getFullYear() }} innertia · Chile</p>
           <a href="mailto:hola@innertia.cl" class="text-sm text-slate-400 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition">
             hola@innertia.cl
